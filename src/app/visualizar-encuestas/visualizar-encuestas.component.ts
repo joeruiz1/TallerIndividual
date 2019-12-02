@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-visualizar-encuestas',
   templateUrl: './visualizar-encuestas.component.html',
@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisualizarEncuestasComponent implements OnInit {
 
-  constructor() { }
-
+    public id: string;
+  constructor(private route: ActivatedRoute) {
+  route.params.subscribe(
+    params=>{this.id=params['id']})
+  }
   ngOnInit() {
   }
 

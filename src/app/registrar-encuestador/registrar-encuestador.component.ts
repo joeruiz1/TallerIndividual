@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-registrar-encuestador',
   templateUrl: './registrar-encuestador.component.html',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarEncuestadorComponent implements OnInit {
 
-  constructor() { }
+      public id: string;
+  constructor(private route: ActivatedRoute) {
+  route.params.subscribe(
+    params=>{this.id=params['id']})
+  }
 
   ngOnInit() {
   }
