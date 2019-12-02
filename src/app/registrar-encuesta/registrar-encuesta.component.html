@@ -1,3 +1,91 @@
-<p>
-registrar-entrevista works!
-</p>
+<html>
+	<head>
+		<title>Menu Desplegable</title>
+		<style type="text/css">
+			
+			* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			#header {
+				margin:auto;
+				width:500px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			
+			ul, ol {
+				list-style:none;
+			}
+			
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li a {
+				background-color:#000;
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
+			
+			.nav li a:hover {
+				background-color:#434343;
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<ul class="nav">
+				<li><a routerLink="">Inicio</a></li>
+				<li><a routerLink="">Servicios</a>
+					<ul>
+						<li><a routerLink="">Registrar Encuestador </a></li>
+						<li><a routerLink="">Registrar Encuesta</a></li>
+					</ul>
+				</li>
+				<li><a routerLink="">Mostrar Encuesta</a>
+					<ul>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+Por favor ingrese los datos :
+
+Nombre de la Encuesta <input type="text" [(ngModel)]="nombreEncuesta"><br>
+id del Encuestador <input type="number" [(ngModel)]="id"><br>
+Lugar <input type="text" [(ngModel)]="lugar"><br>
+Fecha  <input type="text" [(ngModel)]="fecha"><br>
+Hora   <input type="number" [(ngModel)]="hora"><br> 
+Minutos  <input type="number" [(ngModel)]="Minutos"><br>
+Persona Encuestada<input type="text" [(ngModel)]="nombreE"><br> 
+Cedula de la persona Encuestada  <input type="number" [(ngModel)]="CedulaE"><br>
+Foto <input type="text" [(ngModel)]="foto"><br> 
+
+        <button ng-click="redirect()">Enviar Datos</button>
+
+
+	</body>
+</html>
